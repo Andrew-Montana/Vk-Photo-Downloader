@@ -1,0 +1,13 @@
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\Vk Photo Downloader.exe.config
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\Vk Photo Downloader.exe
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\Vk Photo Downloader.pdb
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\HtmlAgilityPack.dll
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\VkNet.dll
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\HtmlAgilityPack.pdb
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\HtmlAgilityPack.xml
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\bin\Debug\VkNet.xml
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\obj\Debug\Vk Photo Downloader.csprojResolveAssemblyReference.cache
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\obj\Debug\Vk Photo Downloader.exe
+D:\Projects\Visual Studio\My Own Projects\Programms\Vk Photo Downloader\Vk Photo Downloader\obj\Debug\Vk Photo Downloader.pdb

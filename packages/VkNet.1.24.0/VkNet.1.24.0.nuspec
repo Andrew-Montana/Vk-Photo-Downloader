@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>VkNet</id>
+    <version>1.24.0</version>
+    <title>Vkontakte API for .NET</title>
+    <authors>a.zhidkov,inyutin-maxim,CaCTuCaTu4ECKuu,vsmall,inok</authors>
+    <owners>a.zhidkov,inyutin-maxim,CaCTuCaTu4ECKuu,vsmall,inok</owners>
+    <licenseUrl>https://vk.codeplex.com/license</licenseUrl>
+    <projectUrl>https://vknet.github.io/vk/</projectUrl>
+    <iconUrl>http://i1228.photobucket.com/albums/ee450/inyutin_mxim/vknet_zpsmyu5oa5i.png?t=1464596085</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Реализация ВКонтакте API для .NET. Список методов см. https://vknet.github.io/vk/</description>
+    <summary />
+    <releaseNotes>Исправление багов.</releaseNotes>
+    <copyright>@ VkNet</copyright>
+    <tags>vk api vknet vkontakte</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="Newtonsoft.Json" version="8.0.3" />
+        <dependency id="HtmlAgilityPack" version="1.4.9" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
