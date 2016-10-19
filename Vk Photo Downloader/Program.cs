@@ -50,7 +50,7 @@ namespace Vk_Photo_Downloader
                     #region compare
                     case "compare":
                         string[] filesCollection = Directory.GetFiles(@"D:\VkPhotos"); // path of every single photo
-                        
+                        Array.Sort(filesCollection);
                         Bitmap[] bitmapCollection = new Bitmap[filesCollection.Length];
                         int i = 0;
                         foreach (string item in filesCollection)
@@ -59,8 +59,87 @@ namespace Vk_Photo_Downloader
                             i++;
                             Console.WriteLine("{0} из {1}",i,filesCollection.Length);
                         }
+                        // узнаем 1 процент от общего кол-ва элементов
+                        double percent = (double)bitmapCollection.Length / (double)100;
+                        // 100 %
+                        List<double> percentsList = new List<double>();
+                        for (int s = 1; s < 101; s++)
+                        {   
+                            percentsList.Add(percent * s);
+                        }
+                        // 
+                        
                         Console.WriteLine("Коллекция фотографий успешно собрана.");
                         Console.WriteLine("Начинается проверка фотографий....");
+                        
+                        int value = 1;
+                        bool bFlag = false;
+                        List<TrashPaths> repeatPhotosList = new List<TrashPaths>();
+                        List<int> arrayX = new List<int>(); // Чтобы J не повторял уже пройденные X
+                            for (int x = 0; x < bitmapCollection.Length; x++)
+                            {
+                              //  Console.WriteLine("Цикл {0} из {1} итераций", x, bitmapCollection.Length - 1);
+                                for (int j = 0; j < bitmapCollection.Length; j++)
+                                {
+                                    bool isNext = false;
+                                    if (arrayX.Count >= 1)
+                                    {
+                                        foreach (var arrayItem in arrayX)
+                                        {
+                                            if (j == arrayItem)
+                                            {
+                                                isNext = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                    if (isNext == true)
+                                    {
+                                        continue;
+                                    }
+                                    bFlag = PhotoComparing.ImageCompareArray(bitmapCollection[x], bitmapCollection[j]);
+                                    if (bFlag == true && x != j)
+                                    {
+                                        
+                                        ChangeColor.greenForeground();
+                                        string TheSameX = filesCollection[x];
+                                        string TheSameJ = filesCollection[j];
+                                       TheSameX = TheSameX.Replace(@"D:\VkPhotos\","");
+                                        TheSameJ = TheSameJ.Replace(@"D:\VkPhotos\", "");
+
+                                        repeatPhotosList.Add(new TrashPaths() { image = bitmapCollection[x], path = TheSameX });
+                                        Console.WriteLine("Найден подобный. " + TheSameX + " похож с " + TheSameJ);
+                                        ChangeColor.ResetColor();
+                                        arrayX.Add(x);
+                                    }
+                                    bFlag = false;
+                                }
+                                if (value < 100)
+                                {
+                                    if (((double)x >= (percentsList[value] - 2)) && ((double)x <= percentsList[value]))
+                                    {
+                                        ChangeColor.redForeground();
+                                        Console.WriteLine("{0}%", value);
+                                        value++;
+                                        ChangeColor.ResetColor();
+                                    }
+                                }
+                                
+                              
+                            }
+                            Console.WriteLine();
+                            ChangeColor.greenForeground();
+                            Console.WriteLine("Копирование дубликатов...");
+                            ChangeColor.ResetColor();
+                            int kolvo = 0;
+                        DirectoryInfo dir2 = new DirectoryInfo(@"D:\VkPhotos\Trash");
+                        dir2.Create();
+                            foreach (var image in repeatPhotosList)
+                            {
+                                image.image.Save(string.Format("D:\\VkPhotos\\Trash\\{0}.png", image.path), System.Drawing.Imaging.ImageFormat.Png);
+                                
+                                kolvo++;
+                            }
                         Console.WriteLine("Нажмите Enter для продолжения...");
                         Console.ReadLine();
                         break;
